@@ -34,10 +34,62 @@ header {
     min-width: 78%;
 }
 
+.primary__content {
+    width: 70.5%;
+    display: flex;
+    flex-direction: row;
+    flex-basis: 1;
+    flex-wrap: wrap;
+    row-gap: 10px;
+}
+
+.primary__basic {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.primary__title {
+    font-size: $main-font-size;
+    color: $btn-color;
+}
+
+.new {
+    font-size: 0.8rem;
+    line-height: 14px;
+    /* letter-spacing: -0.08px; */
+    background-color: $btn-color;
+    color: $bg-color-card;
+    padding: 4px 8px;
+    text-align: center;
+    border-radius: 30px;
+}
+
+.featured {
+    background: $sec-bg-color;
+    color: $bg-color;
+    padding: 4px 5px;
+    border-radius: 30px;
+}
+
+.primary__subtitle {
+    color: $sec-bg-color;
+}
+
 .card__logo {
     width: 48px;
     position: relative;
     top: -24px;
+    left: 26px;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
 }
 
 .primary {
@@ -47,36 +99,58 @@ header {
 .disableElements {
     display: none;
 }
-
+.disableSpan {
+    display: none;
+}
 .newFilter {
     display: block;
 }
 
 .modal {
     position: relative;
-    width: 70%;
+    width: 75%;
     padding: 0px;
     background-color: white;
     top: 110px;
-    left: 1%;
+    left: 0%;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
-    row-gap: 10px;
+    gap: 10px;
 }
 
 .modalPadding {
-    padding: 50px;
+    padding: 30px;
 }
+
 .ctrls {
-	
-    display: flex;	
+
+    display: flex;
     justify-content: space-evenly;
 }
-.filterbtn {
-	font-size: 0.9rem;
-	line-height: 24px;
+.secondary {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: 5px;
+	width: 70%;
+	/* height: 100vh; */
+    align-items: baseline;
+    padding: 20px;
+}
+
+.filterbtn, .actionBtn {
+    font-size: $main-font-size;
+    line-height: 24px;
     font-weight: 700;
-    padding: 2px 20px;
-    color: #5CA5A5;
+    padding: 2px 7px;
+    color: $btn-color;
+    background-color: $btn-bg-color;
+    border: none;
+    border-radius: 4px;
+}
+
+.clear {
+    background-color: $btn-color;
+    border: none;
 }

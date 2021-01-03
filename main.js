@@ -26,10 +26,12 @@ const template = (card, element) => {
   card.innerHTML = `
         <div class="primary">
           <img src=${element.logo} class="card__logo">
+          <div class="primary__content">
           <div class="primary__basic">
             <h1 class="primary__title">${element.company}</h1>
-            <span class="new">New!</span>
-            <span class="featured">Featured</span>
+            ${element.new ? `<span class="new">New!</span>` : `<span class="disableSpan">New!</span>`}
+            ${element.featured ? `<span class="featured">Featured</span>` : `<span class="disableSpan">Featured</span>` }
+           
           </div>
           <h2 class="primary__subtitle">${element.position}</h2>
           <ul>
@@ -37,13 +39,14 @@ const template = (card, element) => {
             <li>${element.contract}</li>
             <li>${element.location}</li>
           </ul>
+          </div>
         </div>
         <hr>
         <div class="secondary">
-        <button class="role">${element.role}</button>
-        <button class="level">${element.level}</button>
-        <ul class="languages"> ${element.languages.map(lang => `<li><button class="language">${lang}</button></li>`).join("")} </ul>
-        <ul class="tools"> ${element.tools.map(tool => `<li><button class="tool">${tool}</button></li>`).join("")} </ul>
+        <button class="role actionBtn">${element.role}</button>
+        <button class="level actionBtn">${element.level}</button>
+        <ul class="languages"> ${element.languages.map(lang => `<li><button class="language actionBtn">${lang}</button></li>`).join("")} </ul>
+        <ul class="tools"> ${element.tools.map(tool => `<li><button class="tool actionBtn">${tool}</button></li>`).join("")} </ul>
        </div>   
      
 `
@@ -65,7 +68,7 @@ cards.addEventListener("click", (evt) => {
   if (!populatedArray.includes(targetElement.innerHTML)) {
     populateModal(targetElement.innerHTML)
   }
- 
+
 
   console.log(populatedArray)
   // console.log(targetElement.className)
@@ -101,7 +104,7 @@ const populateModal = (modalChild) => {
   modal.classList.add("modalPadding")
   ctrls.innerHTML = `
   <button class="filterbtn ${modalChild.toLowerCase()}">${modalChild}</button>
-  <button class="clear">Clear</button>
+  <button class="clear"><img src="/images/icon-remove.svg" class="clearImg"/></button>
   `
   modal.appendChild(ctrls)
 }
