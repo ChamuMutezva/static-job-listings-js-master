@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@500;700&display=swap');
+@import "./reset";
+@import "./variables";
+
+body {
+    font-family: 'Spartan', sans-serif;
+    font-weight: 500;
+    background-color: $bg-color;
+    font-size: 15px;
+}
+
+header {
+    width: 100%;
+    height: 156px;
+    background-color: #5CA5A5;
+    background-image: url("/images/bg-header-mobile.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.cards {
+    display: flex;
+    align-items: center;
+    padding-top: 125px;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.card {
+    background-color: $bg-color-card;
+    width: 327px;
+    min-width: 78%;
+}
+
+.card__logo {
+    width: 48px;
+    position: relative;
+    top: -24px;
+}
+
+.primary {
+    position: relative;
+}
+
+.disableElements {
+    display: none;
+}
+
+.newFilter {
+    display: block;
+}
+
+.modal {
+    position: relative;
+    width: 70%;
+    padding: 0px;
+    background-color: white;
+    top: 110px;
+    left: 1%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 10px;
+}
+
+.modalPadding {
+    padding: 50px;
+}
+.ctrls {
+	
+    display: flex;	
+    justify-content: space-evenly;
+}
+.filterbtn {
+	font-size: 0.9rem;
+	line-height: 24px;
+    font-weight: 700;
+    padding: 2px 20px;
+    color: #5CA5A5;
+}
