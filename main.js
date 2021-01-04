@@ -124,7 +124,7 @@ const populateModal = (modalChild) => {
   modal.classList.add("modalPadding")
   ctrls.innerHTML = `
   <button class="filterbtn ${modalChild.toLowerCase()}">${modalChild}</button>
-  <button class="clear"><img src="/images/icon-remove.svg" class="clearImg"/></button>
+  <button class="clear"><img src="./images/icon-remove.svg" class="clearImg"/></button>
   `
   modal.appendChild(ctrls)
 }
