@@ -1,4 +1,5 @@
 # Frontend Mentor - Job Listings Challenge
+preview link - https://chamumutezva.github.io/static-job-listings-js-master/
 
 ![Design preview for the Job Listings coding challenge](./design/desktop-preview.jpg)
 
