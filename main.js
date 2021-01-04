@@ -79,16 +79,18 @@ cards.addEventListener("click", (evt) => {
   })
 
   card.filter((elm, idx) => {
-    //get all buttons in card
+    //get all buttons in card , buttons are used for the filter only
     const btns = Array.from(elm.querySelectorAll("button"))
-    //const btnFinder = btns.find(btn => btn.innerHTML === targetElement.innerHTML)   
-    //return btnFinder
+    
+    //loop through the buttons one by one    
     btns.forEach(btn => {
+      // for the selected/clicked button
+      // add a class to the card parent 
       if (btn.innerHTML === targetElement.innerHTML) {
         elm.classList.add(targetElement.innerHTML)
-        // populatedArray.forEach(elementNew => {
-        //   console.log(elementNew)
-        // }) 
+
+        // check for the all cards that have the classes in the populatedArray
+        // if found is true - display those cards only - filtering used every method
         const found = populatedArray.every(r => elm.classList.contains(r)) 
         console.log(found)
 
