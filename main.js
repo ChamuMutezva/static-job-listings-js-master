@@ -1,5 +1,6 @@
 const cards = document.querySelector(".cards")
-const filterArray = ["role", "level", "tool", "language"]
+//const modal = document.querySelector(".modal")
+//const filterArray = ["role", "level", "tool", "language"]
 const populatedArray = [];
 
 console.log(cards)
@@ -81,7 +82,7 @@ cards.addEventListener("click", (evt) => {
   card.filter((elm, idx) => {
     //get all buttons in card , buttons are used for the filter only
     const btns = Array.from(elm.querySelectorAll("button"))
-    
+
     //loop through the buttons one by one    
     btns.forEach(btn => {
       // for the selected/clicked button
@@ -91,22 +92,22 @@ cards.addEventListener("click", (evt) => {
 
         // check for the all cards that have the classes in the populatedArray
         // if found is true - display those cards only - filtering used every method
-        const found = populatedArray.every(r => elm.classList.contains(r)) 
+        const found = populatedArray.every(r => elm.classList.contains(r))
         console.log(found)
 
-        if(found) {
+        if (found) {
           elm.classList.remove("disableElements")
           console.log(targetElement.innerHTML)
         }
 
-/*
-        if (populatedArray.includes(targetElement.innerHTML)) {
-          elm.classList.remove("disableElements")
-          console.log(targetElement.innerHTML)
-        } else {
-          return
-        }
-*/
+        /*
+                if (populatedArray.includes(targetElement.innerHTML)) {
+                  elm.classList.remove("disableElements")
+                  console.log(targetElement.innerHTML)
+                } else {
+                  return
+                }
+        */
       }
     })
   })
@@ -120,13 +121,84 @@ cards.addEventListener("click", (evt) => {
 
 const populateModal = (modalChild) => {
   populatedArray.push(modalChild)
+  const modalContainer = document.querySelector(".modalContainer")
   const modal = document.querySelector('.modal')
   const ctrls = document.createElement("div")
+  //const clearAllBtn = document.createElement("button")
+  // clearAllBtn.innerHTML = "Clear"
   ctrls.classList.add("ctrls")
-  modal.classList.add("modalPadding")
+  modalContainer.classList.add("modalPadding")
   ctrls.innerHTML = `
-  <button class="filterbtn ${modalChild.toLowerCase()}">${modalChild}</button>
-  <button class="clear"><img src="./images/icon-remove.svg" class="clearImg"/></button>
+  <span class="filterSpan ${modalChild}">${modalChild}</span>
+  <button class="clearBtn"><img src="./images/icon-remove.svg" class="clearImg"/></button>
   `
   modal.appendChild(ctrls)
+  // modal.appendChild(clearAllBtn)
+  modal.addEventListener("click", (evt) => {
+    const sectionCards = Array.from(document.querySelectorAll("section"))
+    if (evt.target.tagName === "BUTTON" || evt.target.tagName === "IMG" || evt.target.tagName === "SPAN") {
+
+      const filterParent = evt.target.closest(".ctrls")
+      const filterSpan = filterParent.firstElementChild
+      const filterSpanText = filterSpan.innerHTML
+      filterParent.classList.add(filterSpanText)
+
+      console.log(filterSpan)
+      console.log(populatedArray)
+
+      //find index of the element to be removed from array
+      //to populate a new populatedArray without the removed filter element
+      const filterIndex = populatedArray.indexOf(filterSpanText)
+      console.log(filterIndex)
+      if (filterIndex > -1) {
+        populatedArray.splice(filterIndex, 1)  //remove element from array      
+      }
+
+      if (ctrls.classList.contains(filterSpanText)) {
+        //remove only the clicked control from the modal
+        modal.removeChild(ctrls)
+      }
+
+      //remove the class of the clicked btn
+      console.log(sectionCards)
+      sectionCards.forEach(card => {
+        card.classList.remove(filterSpanText)
+        card.classList.remove("disableElements")
+      })
+
+    }
+
+  })
+
 }
+
+const ClearAllFilter = () => {
+  const modal = document.querySelector('.modal')
+  const modalContainer = document.querySelector(".modalContainer")
+  const card = Array.from(document.querySelectorAll(".card"))
+  console.log(card)
+
+  card.forEach(elm => {
+    populatedArray.forEach(item => {
+      if (elm.classList.contains(item)) {
+        elm.classList.remove(item)
+      }
+    })
+    elm.classList.remove("disableElements")
+  })
+  // remove all items in populating array
+  populatedArray.forEach(elm => {
+    populatedArray.pop(elm)
+  })
+  console.log(populatedArray)
+  // remove all .ctrls in modal
+  const ctrls = Array.from(document.querySelectorAll(".ctrls"))
+  ctrls.forEach(ctrl => {
+    modal.removeChild(ctrl)
+  })
+  console.log(ctrls)
+  modalContainer.classList.remove("modalPadding")
+}
+
+const ClearAllBtn = document.querySelector(".clearAll")
+ClearAllBtn.addEventListener("click", ClearAllFilter)

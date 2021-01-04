@@ -188,14 +188,20 @@ ul {
   display: block;
 }
 
-.modal {
+.modalContainer {
   position: relative;
-  width: 75%;
-  padding: 0px;
-  background-color: white;
   top: 110px;
   left: 0%;
   margin: auto;
+  padding: 5px;
+  visibility: hidden;
+}
+
+.modal {
+  padding: 30px;
+  position: relative;
+  width: 75%;
+  background-color: white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -204,8 +210,23 @@ ul {
   gap: 10px;
 }
 
+.clearAll {
+  position: absolute;
+  top: 40%;
+  right: 13%;
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 700;
+  background-color: inherit;
+  border: none;
+}
+
+.clearAll:hover {
+  opacity: 0.4;
+}
+
 .modalPadding {
-  padding: 30px;
+  visibility: visible;
 }
 
 .ctrls {
@@ -235,7 +256,7 @@ ul {
   padding: 20px;
 }
 
-.filterbtn, .actionBtn {
+.filterSpan, .actionBtn {
   font-size: 0.9rem;
   line-height: 24px;
   font-weight: 700;
