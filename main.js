@@ -30,7 +30,7 @@ const template = (card, element) => {
           <div class="primary__basic">
             <h1 class="primary__title">${element.company}</h1>
             ${element.new ? `<span class="new">New!</span>` : `<span class="disableSpan">New!</span>`}
-            ${element.featured ? `<span class="featured">Featured</span>` : `<span class="disableSpan">Featured</span>` }
+            ${element.featured ? `<span class="featured">Featured</span>` : `<span class="disableSpan">Featured</span>`}
            
           </div>
           <h2 class="primary__subtitle">${element.position}</h2>
@@ -58,7 +58,7 @@ cards.addEventListener("click", (evt) => {
   const card = Array.from(document.querySelectorAll(".card"))
   const targetElement = evt.target
   const targetParent = targetElement.closest("section")
-  const newArr = filterArray.filter(elm => elm === targetElement.className)
+  // const newArr = filterArray.filter(elm => elm === targetElement.className)
   const parental = Array.from(document.querySelectorAll("section"))
 
   if (evt.target.tagName !== "BUTTON") {
@@ -67,6 +67,8 @@ cards.addEventListener("click", (evt) => {
 
   if (!populatedArray.includes(targetElement.innerHTML)) {
     populateModal(targetElement.innerHTML)
+  } else {
+    return
   }
 
 
@@ -83,8 +85,26 @@ cards.addEventListener("click", (evt) => {
     //return btnFinder
     btns.forEach(btn => {
       if (btn.innerHTML === targetElement.innerHTML) {
-        elm.classList.remove("disableElements")
-        console.log(elm)
+        elm.classList.add(targetElement.innerHTML)
+        // populatedArray.forEach(elementNew => {
+        //   console.log(elementNew)
+        // }) 
+        const found = populatedArray.every(r => elm.classList.contains(r)) 
+        console.log(found)
+
+        if(found) {
+          elm.classList.remove("disableElements")
+          console.log(targetElement.innerHTML)
+        }
+
+/*
+        if (populatedArray.includes(targetElement.innerHTML)) {
+          elm.classList.remove("disableElements")
+          console.log(targetElement.innerHTML)
+        } else {
+          return
+        }
+*/
       }
     })
   })
