@@ -88,7 +88,7 @@ cards.addEventListener("click", (evt) => {
       // for the selected/clicked button
       // add a class to the card parent 
       if (btn.innerHTML === targetElement.innerHTML) {
-       
+
         elm.classList.add(targetElement.innerHTML)
 
         // check for the all cards that have the classes in the populatedArray
@@ -160,11 +160,19 @@ const populateModal = (modalChild) => {
         modal.removeChild(ctrls)
       }
 
-      //remove the class of the clicked btn
+      //remove the class of the clicked btn      
+
       console.log(sectionCards)
       sectionCards.forEach(card => {
-        card.classList.remove(filterSpanText)
-        card.classList.remove("disableElements")
+        const found = populatedArray.every(r => card.classList.contains(r))
+        console.log(found)
+        if (found) {
+          card.classList.remove(filterSpanText)
+          card.classList.remove("disableElements")
+        } else {
+          return
+        }
+
       })
 
     }
