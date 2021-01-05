@@ -82,12 +82,13 @@ cards.addEventListener("click", (evt) => {
   card.filter((elm, idx) => {
     //get all buttons in card , buttons are used for the filter only
     const btns = Array.from(elm.querySelectorAll("button"))
-
+    let countCard = 0
     //loop through the buttons one by one    
     btns.forEach(btn => {
       // for the selected/clicked button
       // add a class to the card parent 
       if (btn.innerHTML === targetElement.innerHTML) {
+       
         elm.classList.add(targetElement.innerHTML)
 
         // check for the all cards that have the classes in the populatedArray
