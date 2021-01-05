@@ -26,31 +26,32 @@ header {
     padding-bottom: 90px;
     flex-wrap: nowrap;
     flex-direction: column;
-    row-gap: 20px;
+    row-gap: 40px;
 }
 
 .card {
     background-color: $bg-color-card;
     width: 327px;
     min-width: 78%;
-    
+
 }
 
 .primary__content {
     width: 82%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-basis: 1;
     flex-wrap: wrap;
     row-gap: 10px;
     margin-top: 34px;
-padding-left: 10px;
+    padding-left: 10px;
 }
 
 hr {
     width: 80%;
-    color: green;
+    color: $sec-bg-color;
 }
+
 .primary__basic {
     display: flex;
     justify-content: space-between;
@@ -66,7 +67,7 @@ hr {
 }
 
 .new {
-    font-size: 0.8rem;
+    font-size: 0.73rem;
     line-height: 14px;
     /* letter-spacing: -0.08px; */
     background-color: $btn-color;
@@ -77,6 +78,7 @@ hr {
 }
 
 .featured {
+    font-size: 0.73rem;
     background: $sec-bg-color;
     color: $bg-color;
     padding: 4px 5px;
@@ -85,6 +87,8 @@ hr {
 
 .primary__subtitle {
     color: $sec-bg-color;
+    font-size: 1rem;
+    line-height: 24px;
 }
 
 .card__logo {
@@ -102,14 +106,17 @@ ul {
     align-items: center;
     gap: 20px;
 }
+
 li {
-	font-size: 0.9rem;
-	line-height: 24px;
-	letter-spacing: -0.1px;
+    font-size: 0.73rem;
+    line-height: 24px;
+    letter-spacing: -0.1px;
 }
+
 .primary__content li {
     list-style: disc;
 }
+
 .primary__content li:first-child {
     list-style: none;
 }
@@ -202,4 +209,25 @@ li {
 .clear {
     background-color: $btn-color;
     border: none;
+}
+
+@media screen and(min-width: 1120px) {
+    .card {
+        display: flex;
+        flex-direction: row;
+    }
+
+    hr {
+        display: none;
+    }
+
+    .primary {
+        width: 40%;
+    }
+
+    .secondary {
+        width: 45%;
+        align-items: center;
+
+    }
 }

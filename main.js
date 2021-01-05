@@ -8,7 +8,7 @@ const getData = () => {
   fetch('./data.json')
     .then(data => data.json())
     .then(data => {
-      console.log(data)
+     // console.log(data)
       data.forEach(element => {
         // console.log(element.company)
         const card = document.createElement("section")
@@ -101,22 +101,10 @@ cards.addEventListener("click", (evt) => {
           console.log(targetElement.innerHTML)
         }
 
-        /*
-                if (populatedArray.includes(targetElement.innerHTML)) {
-                  elm.classList.remove("disableElements")
-                  console.log(targetElement.innerHTML)
-                } else {
-                  return
-                }
-        */
       }
     })
   })
-  /* 
-    while(cards.firstChild) {
-      cards.removeChild(cards.firstChild)
-    }
-   */
+ 
 })
 
 
@@ -162,7 +150,7 @@ const populateModal = (modalChild) => {
 
       //remove the class of the clicked btn      
 
-      console.log(sectionCards)
+    //  console.log(sectionCards)
       sectionCards.forEach(card => {
         const found = populatedArray.every(r => card.classList.contains(r))
         console.log(found)

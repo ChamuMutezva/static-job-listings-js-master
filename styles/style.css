@@ -85,7 +85,7 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  row-gap: 20px;
+  row-gap: 40px;
 }
 
 .card {
@@ -99,10 +99,10 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -ms-flex-preferred-size: 1;
       flex-basis: 1;
   -ms-flex-wrap: wrap;
@@ -114,7 +114,7 @@ header {
 
 hr {
   width: 80%;
-  color: green;
+  color: #2B3939;
 }
 
 .primary__basic {
@@ -131,14 +131,14 @@ hr {
 }
 
 .primary__title {
-  font-size: 0.9rem;
+  font-size: 0.87rem;
   color: #5CA5A5;
   line-height: 24px;
   font-weight: 700;
 }
 
 .new {
-  font-size: 0.8rem;
+  font-size: 0.73rem;
   line-height: 14px;
   /* letter-spacing: -0.08px; */
   background-color: #5CA5A5;
@@ -149,6 +149,7 @@ hr {
 }
 
 .featured {
+  font-size: 0.73rem;
   background: #2B3939;
   color: #EFFAFA;
   padding: 4px 5px;
@@ -157,6 +158,8 @@ hr {
 
 .primary__subtitle {
   color: #2B3939;
+  font-size: 1rem;
+  line-height: 24px;
 }
 
 .card__logo {
@@ -186,7 +189,7 @@ ul {
 }
 
 li {
-  font-size: 0.9rem;
+  font-size: 0.73rem;
   line-height: 24px;
   letter-spacing: -0.1px;
 }
@@ -286,7 +289,7 @@ li {
 
 .filterSpan,
 .actionBtn {
-  font-size: 0.9rem;
+  font-size: 0.87rem;
   line-height: 24px;
   font-weight: 700;
   padding: 2px 7px;
@@ -299,5 +302,29 @@ li {
 .clear {
   background-color: #5CA5A5;
   border: none;
+}
+
+@media screen and (min-width: 1120px) {
+  .card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  hr {
+    display: none;
+  }
+  .primary {
+    width: 40%;
+  }
+  .secondary {
+    width: 45%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 /*# sourceMappingURL=style.css.map */
