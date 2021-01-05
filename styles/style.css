@@ -78,6 +78,7 @@ header {
       -ms-flex-align: center;
           align-items: center;
   padding-top: 90px;
+  padding-bottom: 90px;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
   -webkit-box-orient: vertical;
