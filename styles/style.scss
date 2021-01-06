@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@500;700&display=swap');
 @import "./reset";
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@500;700&display=swap');
 @import "./variables";
 
 body {
@@ -100,6 +100,7 @@ header {
     color: $sec-bg-color;
     font-size: 1rem;
     line-height: 24px;
+    font-weight: 700;
 }
 
 .card__logo {
@@ -213,6 +214,7 @@ li {
     background-color: $btn-bg-color;
     border: none;
     border-radius: 4px;
+    letter-spacing: -0.1px;
 }
 
 .clearBtn {
@@ -234,19 +236,41 @@ button:hover {
 }
 
 
-@media screen and(min-width: 1120px) {
+@media screen and(min-width: 1280px) {
+    /* ---------------------------------
+            HEADER DESKTOP
+    -------------------------------- */
+    header {
+        background-image: url("/images/bg-header-desktop.svg");
+    }
+
+    /* ---------------------------------
+            CARD DESKTOP
+    -------------------------------- */
+    .cards {
+        padding-top: 78px;
+    }
+
     .card {
         display: flex;
         flex-direction: row;
+        min-width: 81.5%;
+        justify-content: space-between;
     }
 
     .card__logo {
-        top: 50px;
+        top: 32px;
+        width: 88px;
+    }
+    .primary__title {
+        font-size: 0.933rem;        
     }
 
     .primary {
-        width: 40%;
+        width: 35%;
         padding-left: 160px;
+        padding-top: 13px;
+        padding-bottom: 13px;
     }
 
     .primary::before {
@@ -255,10 +279,30 @@ button:hover {
         bottom: 0;
         left: 5%;
     }
+    .featured, .new {       
+        line-height: 14px;
+    }
+    .primary__subtitle {        
+        font-size: 1.2rem;
+        line-height: 24px;
+    }
+    li {
+        font-size: 1rem;
+        letter-spacing: -0.12px;
+    }
+    .languages, .tools {
+        gap: 10px;
+    }
 
     .secondary {
-        width: 45%;
+        width: 35%;
         align-items: center;
-
+    }
+    .modal {
+        padding: 22px;
+        min-width: 79.5%;
+    }
+    .modalContainer {       
+        top: 123px;        
     }
 }

@@ -1,8 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@500;700&display=swap");
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
 */
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@500;700&display=swap");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -143,7 +143,7 @@ header {
 }
 
 .primary__title {
-  font-size: 0.87rem;
+  font-size: 0.8666rem;
   color: #5CA5A5;
   line-height: 24px;
   font-weight: 700;
@@ -172,6 +172,7 @@ header {
   color: #2B3939;
   font-size: 1rem;
   line-height: 24px;
+  font-weight: 700;
 }
 
 .card__logo {
@@ -299,7 +300,7 @@ li {
 
 .filterSpan,
 .actionBtn {
-  font-size: 0.87rem;
+  font-size: 0.8666rem;
   line-height: 24px;
   font-weight: 700;
   padding: 2px 7px;
@@ -307,6 +308,7 @@ li {
   background-color: #eef6f6;
   border: none;
   border-radius: 4px;
+  letter-spacing: -0.1px;
 }
 
 .clearBtn {
@@ -326,7 +328,19 @@ button:hover {
   border-bottom: 1px solid #5CA5A5;
 }
 
-@media screen and (min-width: 1120px) {
+@media screen and (min-width: 1280px) {
+  /* ---------------------------------
+            HEADER DESKTOP
+    -------------------------------- */
+  header {
+    background-image: url("/images/bg-header-desktop.svg");
+  }
+  /* ---------------------------------
+            CARD DESKTOP
+    -------------------------------- */
+  .cards {
+    padding-top: 78px;
+  }
   .card {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -335,13 +349,23 @@ button:hover {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+    min-width: 81.5%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
   .card__logo {
-    top: 50px;
+    top: 32px;
+    width: 88px;
+  }
+  .primary__title {
+    font-size: 0.933rem;
   }
   .primary {
-    width: 40%;
+    width: 35%;
     padding-left: 160px;
+    padding-top: 13px;
+    padding-bottom: 13px;
   }
   .primary::before {
     width: 0%;
@@ -349,11 +373,32 @@ button:hover {
     bottom: 0;
     left: 5%;
   }
+  .featured, .new {
+    line-height: 14px;
+  }
+  .primary__subtitle {
+    font-size: 1.2rem;
+    line-height: 24px;
+  }
+  li {
+    font-size: 1rem;
+    letter-spacing: -0.12px;
+  }
+  .languages, .tools {
+    gap: 10px;
+  }
   .secondary {
-    width: 45%;
+    width: 35%;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+  }
+  .modal {
+    padding: 22px;
+    min-width: 79.5%;
+  }
+  .modalContainer {
+    top: 123px;
   }
 }
 /*# sourceMappingURL=style.css.map */
