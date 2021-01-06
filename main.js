@@ -25,9 +25,9 @@ getData()
 
 const template = (card, element) => {
   card.innerHTML = `
-        <div class="primary">
-          <img src=${element.logo} class="card__logo">
+        <div class="primary">        
           <div class="primary__content">
+          <img src=${element.logo} class="card__logo">
           <div class="primary__basic">
             <h1 class="primary__title">${element.company}</h1>
             ${element.new ? `<span class="new">New!</span>` : `<span class="disableSpan">New!</span>`}
@@ -42,7 +42,7 @@ const template = (card, element) => {
           </ul>
           </div>
         </div>
-        <hr>
+        
         <div class="secondary">
         <button class="role actionBtn">${element.role}</button>
         <button class="level actionBtn">${element.level}</button>

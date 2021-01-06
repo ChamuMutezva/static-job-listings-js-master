@@ -33,7 +33,11 @@ header {
     background-color: $bg-color-card;
     width: 327px;
     min-width: 78%;
-
+    position: relative;
+}
+.card:first-child, .card:nth-child(2) {
+    border-left: 5px solid $btn-color;
+border-radius: 7px;
 }
 
 .primary__content {
@@ -47,11 +51,15 @@ header {
     padding-left: 10px;
 }
 
-hr {
-    width: 80%;
-    color: $sec-bg-color;
+.primary::before {
+	position: absolute;
+	content: "";
+	width: 90%;
+	height: 2px;
+	background-color: $sec-bg-color;
+	bottom: 0;
+	left: 5%;
 }
-
 .primary__basic {
     display: flex;
     justify-content: space-between;
@@ -217,14 +225,19 @@ li {
         flex-direction: row;
     }
 
-    hr {
-        display: none;
+    .card__logo {       
+        top: 50px;      
     }
-
     .primary {
         width: 40%;
+        padding-left: 160px;
     }
-
+    .primary::before {       
+        width: 0%;
+        height: 0px;       
+        bottom: 0;
+        left: 5%;
+    }
     .secondary {
         width: 45%;
         align-items: center;
