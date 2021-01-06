@@ -316,6 +316,7 @@ li {
   border: none;
 }
 
+/*active states */
 button:hover {
   cursor: pointer;
 }
@@ -399,6 +400,12 @@ button:hover {
   }
   .modalContainer {
     top: 123px;
+  }
+  .disableElements {
+    display: none;
+  }
+  .disableSpan {
+    display: none;
   }
 }
 /*# sourceMappingURL=style.css.map */

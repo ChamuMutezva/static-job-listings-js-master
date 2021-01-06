@@ -82,7 +82,7 @@ cards.addEventListener("click", (evt) => {
   card.filter((elm, idx) => {
     //get all buttons in card , buttons are used for the filter only
     const btns = Array.from(elm.querySelectorAll("button"))
-    let countCard = 0
+    
     //loop through the buttons one by one    
     btns.forEach(btn => {
       // for the selected/clicked button
@@ -123,9 +123,9 @@ const populateModal = (modalChild) => {
   `
   modal.appendChild(ctrls)
   // modal.appendChild(clearAllBtn)
-  modal.addEventListener("click", (evt) => {
+  modal.addEventListener("click", (evt) => {    
     const sectionCards = Array.from(document.querySelectorAll("section"))
-    if (evt.target.tagName === "BUTTON" || evt.target.tagName === "IMG" || evt.target.tagName === "SPAN") {
+    if (evt.target.tagName === "BUTTON" || evt.target.tagName === "IMG") {
 
       const filterParent = evt.target.closest(".ctrls")
       const filterSpan = filterParent.firstElementChild
@@ -150,7 +150,8 @@ const populateModal = (modalChild) => {
 
       //remove the class of the clicked btn      
 
-    //  console.log(sectionCards)
+    //  check if the remaining cards in the main html 
+    // meet the undated filter requirements
       sectionCards.forEach(card => {
         const found = populatedArray.every(r => card.classList.contains(r))
         console.log(found)
@@ -162,6 +163,10 @@ const populateModal = (modalChild) => {
         }
 
       })
+
+      if (populatedArray.length === 0) {
+        modalContainer.classList.remove("modalPadding")
+      }
 
     }
 
