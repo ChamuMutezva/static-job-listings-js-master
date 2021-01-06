@@ -35,9 +35,11 @@ header {
     min-width: 78%;
     position: relative;
 }
-.card:first-child, .card:nth-child(2) {
+
+.card:first-child,
+.card:nth-child(2) {
     border-left: 5px solid $btn-color;
-border-radius: 7px;
+    border-radius: 7px;
 }
 
 .primary__content {
@@ -52,14 +54,15 @@ border-radius: 7px;
 }
 
 .primary::before {
-	position: absolute;
-	content: "";
-	width: 90%;
-	height: 2px;
-	background-color: $sec-bg-color;
-	bottom: 0;
-	left: 5%;
+    position: absolute;
+    content: "";
+    width: 90%;
+    height: 2px;
+    background-color: $sec-bg-color;
+    bottom: 0;
+    left: 5%;
 }
+
 .primary__basic {
     display: flex;
     justify-content: space-between;
@@ -163,6 +166,7 @@ li {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    margin: auto;
 }
 
 .clearAll {
@@ -172,12 +176,9 @@ li {
     display: inline-block;
     font-size: 1rem;
     font-weight: 700;
-    background-color: inherit;
+    color: $btn-color;
     border: none;
-}
-
-.clearAll:hover {
-    opacity: 0.4;
+    background-color: transparent;
 }
 
 .modalPadding {
@@ -214,10 +215,24 @@ li {
     border-radius: 4px;
 }
 
-.clear {
+.clearBtn {
     background-color: $btn-color;
     border: none;
 }
+
+//active states
+button:hover {
+    cursor: pointer;
+}
+
+.clearBtn:hover {
+    background-color: black;
+}
+
+.clearAll:hover {    
+    border-bottom: 1px solid $btn-color;
+}
+
 
 @media screen and(min-width: 1120px) {
     .card {
@@ -225,19 +240,22 @@ li {
         flex-direction: row;
     }
 
-    .card__logo {       
-        top: 50px;      
+    .card__logo {
+        top: 50px;
     }
+
     .primary {
         width: 40%;
         padding-left: 160px;
     }
-    .primary::before {       
+
+    .primary::before {
         width: 0%;
-        height: 0px;       
+        height: 0px;
         bottom: 0;
         left: 5%;
     }
+
     .secondary {
         width: 45%;
         align-items: center;

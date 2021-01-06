@@ -95,7 +95,8 @@ header {
   position: relative;
 }
 
-.card:first-child, .card:nth-child(2) {
+.card:first-child,
+.card:nth-child(2) {
   border-left: 5px solid #5CA5A5;
   border-radius: 7px;
 }
@@ -250,6 +251,7 @@ li {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   gap: 10px;
+  margin: auto;
 }
 
 .clearAll {
@@ -259,12 +261,9 @@ li {
   display: inline-block;
   font-size: 1rem;
   font-weight: 700;
-  background-color: inherit;
+  color: #5CA5A5;
   border: none;
-}
-
-.clearAll:hover {
-  opacity: 0.4;
+  background-color: transparent;
 }
 
 .modalPadding {
@@ -310,9 +309,21 @@ li {
   border-radius: 4px;
 }
 
-.clear {
+.clearBtn {
   background-color: #5CA5A5;
   border: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.clearBtn:hover {
+  background-color: black;
+}
+
+.clearAll:hover {
+  border-bottom: 1px solid #5CA5A5;
 }
 
 @media screen and (min-width: 1120px) {
