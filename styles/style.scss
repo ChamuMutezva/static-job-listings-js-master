@@ -8,7 +8,9 @@ body {
     background-color: $bg-color;
     font-size: 15px;
 }
-
+/* -------------------------------
+        HEADER
+        ----------------------*/
 header {
     width: 100%;
     height: 156px;
@@ -19,6 +21,9 @@ header {
     position: relative;
 }
 
+/* ---------------------
+        MAIN - CARDS
+            -------------- */
 .cards {
     display: flex;
     align-items: center;
@@ -198,8 +203,7 @@ li {
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 5px;
-    width: 70%;
-    /* height: 100vh; */
+    width: 70%;    
     align-items: baseline;
     padding: 20px;
 }
@@ -222,7 +226,9 @@ li {
     border: none;
 }
 
-/*active states */
+/* ----------------
+active states
+ -------------------*/
 button:hover {
     cursor: pointer;
 }

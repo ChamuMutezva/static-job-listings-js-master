@@ -60,6 +60,9 @@ body {
   font-size: 15px;
 }
 
+/* -------------------------------
+        HEADER
+        ----------------------*/
 header {
   width: 100%;
   height: 156px;
@@ -70,6 +73,9 @@ header {
   position: relative;
 }
 
+/* ---------------------
+        MAIN - CARDS
+            -------------- */
 .cards {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -291,7 +297,6 @@ li {
           justify-content: space-between;
   gap: 5px;
   width: 70%;
-  /* height: 100vh; */
   -webkit-box-align: baseline;
       -ms-flex-align: baseline;
           align-items: baseline;
@@ -316,7 +321,9 @@ li {
   border: none;
 }
 
-/*active states */
+/* ----------------
+active states
+ -------------------*/
 button:hover {
   cursor: pointer;
 }
