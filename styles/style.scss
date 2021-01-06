@@ -15,7 +15,7 @@ header {
     width: 100%;
     height: 156px;
     background-color: #5CA5A5;
-    background-image: url("./images/bg-header-mobile.svg");
+    background-image: url("../images/bg-header-mobile.svg");    
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
@@ -247,7 +247,7 @@ button:hover {
             HEADER DESKTOP
     -------------------------------- */
     header {
-        background-image: url("./images/bg-header-desktop.svg");
+        background-image: url("../images/bg-header-desktop.svg");
     }
 
     /* ---------------------------------
