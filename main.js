@@ -27,7 +27,7 @@ const template = (card, element) => {
   card.innerHTML = `
         <div class="primary">        
           <div class="primary__content">
-          <img src=${element.logo} class="card__logo">
+          <img src=${element.logo} class="card__logo" alt="${element.company}">
           <div class="primary__basic">
             <h1 class="primary__title">${element.company}</h1>
             ${element.new ? `<span class="new">New!</span>` : `<span class="disableSpan">New!</span>`}
@@ -119,7 +119,7 @@ const populateModal = (modalChild) => {
   modalContainer.classList.add("modalPadding")
   ctrls.innerHTML = `
   <span class="filterSpan ${modalChild}">${modalChild}</span>
-  <button class="clearBtn"><img src="./images/icon-remove.svg" class="clearImg"/></button>
+  <button class="clearBtn"><img src="./images/icon-remove.svg" class="clearImg" alt=""/></button>
   `
   modal.appendChild(ctrls)
   // modal.appendChild(clearAllBtn)

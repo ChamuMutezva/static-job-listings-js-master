@@ -129,8 +129,8 @@ header {
   position: absolute;
   content: "";
   width: 90%;
-  height: 2px;
-  background-color: #2B3939;
+  height: 1px;
+  background-color: #B7C4C4;
   bottom: 0;
   left: 5%;
 }
