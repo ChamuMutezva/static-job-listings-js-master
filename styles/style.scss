@@ -255,12 +255,13 @@ button:hover {
     -------------------------------- */
     .cards {
         padding-top: 78px;
+        row-gap: 24px;
     }
 
     .card {
         display: flex;
         flex-direction: row;
-        min-width: 81.5%;
+        min-width: 76.8%;
         justify-content: space-between;
     }
 

@@ -348,6 +348,7 @@ button:hover {
     -------------------------------- */
   .cards {
     padding-top: 78px;
+    row-gap: 24px;
   }
   .card {
     display: -webkit-box;
@@ -357,7 +358,7 @@ button:hover {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    min-width: 81.5%;
+    min-width: 76.8%;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
