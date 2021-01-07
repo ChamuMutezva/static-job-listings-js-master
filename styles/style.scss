@@ -320,3 +320,11 @@ button:hover {
         display: none;
     }
 }
+
+@media screen and (min-width: 1600px) {
+    .wrapper {
+      margin: 0 auto;
+      width: 100%;
+      max-width: 1600px;
+    }
+  }
